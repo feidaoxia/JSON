@@ -1,0 +1,161 @@
+{
+"schematics":
+[
+     {
+      "path": "",
+      "width": 700
+   },
+      {
+      "path": "Controller",
+      "width": 700,
+      "display": "closed"
+   },
+      {
+      "path": "Controller/Voltage Controller",
+      "width": 700,
+      "display": "closed"
+   },
+      {
+      "path": "Controller/Center Point\\nVoltage Controller",
+      "width": 700,
+      "display": "closed"
+   },
+      {
+      "path": "Controller/Current\\nController",
+      "width": 700,
+      "display": "closed"
+   }
+],
+   
+"paramtables":
+[
+   {
+      "display": "dialog",
+      "component": "V_3ph",
+      "parameters":
+      [
+         {
+            "variable": "varVin",
+            "label": "电源电压",
+            "unit": "V",
+            "min": 100,
+            "max": 1000,
+            "value": 220
+         },
+         {
+            "variable": "varFs",
+            "label": "电源频率",
+            "type": "combobox",
+            "options":
+            [ 
+               { "value": 50,  "label": "50 Hz" },
+               { "value": 60, "label": "60 Hz" }
+            ],
+            "value": 60
+         }
+		]
+	},
+	{
+      "display": "dialog",
+      "component": "Squirrel-Cage",
+      "parameters":
+      [
+         {
+            "variable": "varRs",
+            "label": "定子电阻Rs",
+            "unit": "H",
+            "min": 0,
+            "max": 10,
+            "value": 0.531
+         },
+         {
+            "variable": "varL1s",
+            "label": "定子漏感Lls",
+			"unit": "H",
+            "min":0,
+			"max":1,
+			"value":0.00252
+         },
+         {
+            "variable": "varRr",
+            "label": "转子电阻Rr",
+            "unit": "Ω",
+            "min": 0,
+            "max": 10,
+            "value": 0.408
+         },
+		 {
+            "variable": "varL1r",
+            "label": "转子漏感L1r",
+            "unit": "H",
+            "min": 0,
+            "max": 1,
+            "value": 0.00252
+         },
+		 {
+            "variable": "varLm",
+            "label": "互感Lm",
+            "unit": "H",
+            "min": 0,
+            "max": 1,
+            "value": 0.00847
+         },
+		 {
+            "variable": "varJ",
+            "label": "转动惯量J",
+            "unit": "kg.m^2",
+            "min": 0,
+            "max": 100,
+            "value": 0.1
+         },
+		 {
+            "variable": "varp",
+            "label": "电极对数p",
+            "type": "combobox",
+            "options":
+            [ 
+               { "value": 1,  "label": "1 对" },
+               { "value": 2,  "label": "2 对" },
+			   { "value": 3,  "label": "3 对" },
+			   { "value": 4,  "label": "4 对" }
+            ],
+            "value": 2
+         }
+		]
+	},
+	{
+	  "display": "dialog",
+      "component": "转子轴等效负载转矩",
+      "parameters":
+      [
+         {
+            "variable": "varTm",
+            "label": "",
+            "unit": "kg.m^2",
+            "min": 0,
+            "max": 1000,
+            "value": 10
+         }
+		]
+	}
+],
+
+"scopes":
+[
+	{
+		"path": "Scope",
+		"height": 400,
+		"width": 400,
+		"resize": "xy",
+		"display": "open"
+	}
+],
+
+"simulations":
+[
+	{
+		"label": "仿真",
+		"analysis": ""
+	}
+]
+}
